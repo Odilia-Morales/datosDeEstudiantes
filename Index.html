@@ -17,19 +17,24 @@
     <main class="container">
         <form id="alumnoRegistry">
             <div class="my-3">
-                <label for="alumnoNameControl" class="form_label">Nombre</label>
-                <input name="Name" type="text" class="form_control" id="alumnoNameControl"
-                placeholder="Nombre del estudiante">
+                <label for="alumnoNameControl" class="form-label">Nombre</label>
+                <input name="Name" type="text" class="form-control" id="alumnoNameControl"
+                    placeholder="Nombre del estudiante">
                 </div>
                 <div class="my-3">
-                <label for="alumnoFamilyNameControl" class="form_label">Apellido</label>
-                <input name="familyName" type="text" class="form_control" id="studentFamilyNameControl"
-                placeholder="Apellidos del estudiante">
+                <label for="alumnoFamilyNameControl" class="form-label">Apellido</label>
+                <input name="familyName" type="text" class="form-control" id="studentFamilyNameControl"
+                    placeholder="Apellidos del estudiante">
                 </div>
                 <div class="my-3">
-                <label for="alumnoAgeControl" class="form_label">Edad</label>
-                <input name="Age" type="number" class="form_control" id="alumnoAgeControl"
-                placeholder="Edad del estudiante">
+                     <label for="alumnoAgeControl" class="form-label">Edad</label>
+                     <input name="age" type="number" class="form-control" id="alumnoAgeControl"
+                         placeholder="Edad del estudiante">
+                </div>
+                <div class="my-3">
+                    <label for="alumnoClasificationControl" class="form-label">Estado</label>
+                    <input name="clasification" type="text" class="form-control" id="alumnoClasificationControl"
+                        placeholder="Clasificacion del estudiante">
                 </div>
                 <button type="submit" class="btn btn-primary mt-3" form="alumnoRegistry">Registrar</button>
         </form>
@@ -51,7 +56,8 @@
                     <th>Nombre</th>
                     <th>Apellidos</th>
                     <th>Edad</th>
-                    <th>Group</th>
+                    <th>Clasificacion</th>
+                    <th>Grupo</th>
                     <th>Acciones</th> 
                 </tr>
             </thead>

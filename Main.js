@@ -28,9 +28,9 @@ const handleFormSubmit = (event) => {
 
 const alumno = {
     name: form.name.value,
-    familyName: form.name.value,
+    familyName: form.familyName.value,
     age: Number(form.age.value),
-    group: form.group.value
+    clasification: form.clasification.value
 
 };
 
@@ -52,10 +52,11 @@ if (Student) {
     const newGroup = prompt('Ingrese el nuevo grupo:', '');
     if (newGroup >= 1 && newGroup <= 5) {
         arregloStudents[index] = setGroup(Student, Number(newGroup));
-updateStudentList();
+
+        updateStudentList();
             console.log(arregloStudents);
         } else {
-            alert('group inválido');
+            alert('Grupo inválido');
         }
     } else {
         alert('Índice inválido');
@@ -65,23 +66,18 @@ updateStudentList();
 const handleEditStudent = (event) => {
     const index = event.target.dataset.index;
     const Student = arregloStudents[index];
-    
-
-
-
-
-    
+    const newName = prompt('Ingrese el nuevo nombre:', Student.name);
     const newFamilyName = prompt('Ingrese el nuevo apellido:', Student.familyName);
     const newAge = prompt('Ingrese la nueva edad:', Student.age);
-    const newGroup = prompt('Ingrese el nuevo grupo:', Student.group);
+    const newClasification = prompt('Ingrese la nueva clasificacion:', Student.clasification);
     
-    if (newName && newFamilyName && newAge && newGroup) {
+    if (newName && newFamilyName && newAge && newClasification) {
         arregloStudents[index] = {
             ...Student,
             name: newName,
             familyName: newFamilyName,
             age: Number(newAge),
-            group: newGroup
+            clasification: newClasification
         };
 
         updateStudentList();
@@ -145,6 +141,7 @@ const updateStudentList = (filteredStudents = arregloStudents) => {
             <td>${Student.name}</td>
             <td>${Student.familyName}</td>
             <td>${Student.age}</td>
+            <td>${Student.clasification}</td>
             <td>${Student.group}</td>
             <td>
             <button type="button" class="btn btn-warning editBtn" data-index="${index}">Editar</button>
@@ -168,7 +165,7 @@ const updateStudentList = (filteredStudents = arregloStudents) => {
     });
 };
 
-const validateAlumno = ({ name = "", familyName = "", age = 0, group = "" }) => name !== "" && familyName !== "" && age !== 0 && group !== ""; 
+const validateAlumno = ({ name = "", familyName = "", age = 0, clasification = "" }) => name !== "" && familyName !== "" && age !== 0 && clasification !== ""; 
 updateStudentList();
 
 const form = document.querySelector('#alumnoRegistry');
